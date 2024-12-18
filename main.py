@@ -10,8 +10,10 @@ guessed_right = False
 def define_attempts(difficulty):
     if difficulty == 'easy':
         attempts=10
-    else:
+    elif difficulty == 'hard':
         attempts=5
+    else:
+        attempts = -1
     return attempts
 
 def reduce_attempts(remaining_attempts):
@@ -31,15 +33,18 @@ def check_the_guess(real, guessed):
 answer = randrange(1,100)
 num_of_attempts = define_attempts(hardiness)
 
-while num_of_attempts >= 1:
-    print(f"You have {num_of_attempts} attempts remaining to guess the number")
-    guess = int(input("make a guess: "))
-    print(check_the_guess(answer,guess))
-    if num_of_attempts >=2 and not guessed_right:
-        print("guess again")
-    if not guessed_right:
-        num_of_attempts = reduce_attempts(num_of_attempts)
-    else:
-        break
+if num_of_attempts ==-1:
+    print("please choose between 'easy' and 'hard'")
 else:
-    print("you couldn't guessed the right number!")
+    while num_of_attempts >= 1:
+        print(f"You have {num_of_attempts} attempts remaining to guess the number")
+        guess = int(input("make a guess: "))
+        print(check_the_guess(answer,guess))
+        if num_of_attempts >=2 and not guessed_right:
+            print("guess again")
+        if not guessed_right:
+            num_of_attempts = reduce_attempts(num_of_attempts)
+        else:
+            break
+    else:
+        print("you couldn't guessed the right number!")
