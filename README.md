@@ -51,11 +51,13 @@ Choose your difficulty:
 2. Hard (5 guesses)
 
 Your guess: 50
-Too low! Try again.
+Too low
+Guess again
 Your guess: 75
-Too high! Try again.
+Too high
+Guess again
 Your guess: 62
-Correct! You’ve guessed it!
+You got it! the answer was 62
 ```
 
 ---
